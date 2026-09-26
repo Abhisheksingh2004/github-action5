@@ -1,13 +1,19 @@
-name: Fail Test
+name: Intentional Failure Test
 
+# This makes the action run when you push, or manually from the Actions tab
 on:
+  push:
+    branches: ["main", "master"]
   workflow_dispatch:
 
 jobs:
-  fail-job:
+  test-failure:
     runs-on: ubuntu-latest
     steps:
-      - name: Simulate failure
+      - name: Print a message
+        run: echo "Starting the job... but it is going to fail!"
+
+      - name: Intentionally Failing Step
         run: |
-          echo "This workflow is intentionally failing."
+          echo "Crashing the workflow with an exit code 1"
           exit 1
