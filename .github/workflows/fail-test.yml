@@ -1,0 +1,13 @@
+name: Fail Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fail-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate failure
+        run: |
+          echo "This workflow is intentionally failing to test the extractor."
+          exit 1
