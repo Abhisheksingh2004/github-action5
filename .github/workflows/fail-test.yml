@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Simulate failure
         run: |
-          echo "This workflow is intentionally failing to test the extractor."
+          echo "This workflow is intentionally failing."
           exit 1
